@@ -9,7 +9,25 @@ CODEBASE="http://java.sun.com/products/plugin/1.2/jinstall-12-win32.cab#Version=
 <PARAM NAME="code" VALUE = "psl.trikx.impl.TreeApplet">
 <PARAM NAME="archive" VALUE = "jazz.jar,trikx.jar">
 <PARAM NAME="type" VALUE="application/x-java-applet;version=1.2">
-</OBJECT>
 
+
+<COMMENT>
+    <EMBED 
+    type="application/x-java-applet;version=1.2" 
+ pluginspage="http://java.sun.com/products/plugin/1.2/plugin-install.html"
+    WIDTH = 370 HEIGHT = 330   
+    CODE = "psl.trikx.impl.TreeApplet" 
+    ARCHIVE = "jazz.jar,trikx.jar"
+    java_CODE = "psl.trikx.impl.TreeApplet" 
+    java_ARCHIVE = "jazz.jar,trikx.jar">
+    <NOEMBED>
+</COMMENT>
+    If you see this text, then the Java plug-in is not installed
+    properly on this machine.  You can download the java plugin
+    from <a href="http://java.sun.com/products/plugin/1.2/plugin-install.html">Sun</a>
+    </NOEMBED></EMBED>
+
+
+</OBJECT>
 </body>
 </html>
