@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<portlets user="default" xmlns="http://xml.apache.org/jetspeed/2000/psml">
+	<controller name="org.apache.jetspeed.portal.controllers.CardPortletController">
+		<parameter value="pane" name="parameter"/>
+	</controller>
+	<skin state="NORMAL">
+		<property value="Classic Xo3 Blue" name="skin-name"/>
+		<property value="#AAAAAA" name="selected-color"/>
+		<property value="#DFE2FF" name="background-color"/>
+		<property value="#0000FF" name="title-color"/>
+		<property value="#DFE2FF" name="pane-background-color"/>
+		<property value="#B6BDD6" name="pane-edge-color"/>
+		<property value="images" name="image-dir"/>
+	</skin>
+	<portlets user="default">
+		<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController">
+			<parameter value="35%,65%" name="sizes"/>
+			<parameter value="row" name="mode"/>
+		</controller>
+		<layout size="NORMAL" position="0"/>
+		<skin state="NORMAL">
+			<property value="#FFFFFF" name="background-color"/>
+		</skin>
+		<metainfo>
+			<title>Home Page</title>
+		</metainfo>
+		<portlets user="default">
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+			<layout size="NORMAL" position="1"/>
+			<entry parent="Components" type="ref">
+				<layout size="NORMAL" position="0"/>
+			</entry>
+			<entry parent="Gauge" type="ref">
+				<layout size="NORMAL" position="1"/>
+			</entry>
+
+		</portlets>
+
+		<portlets user="default">
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+			<layout size="NORMAL" position="2"/>
+			<entry parent="Metaparser" type="ref">
+				<layout size="NORMAL" position="0"/>
+			</entry>
+			<entry parent="Oracle" type="ref">
+				<layout size="NORMAL" position="1"/>
+			</entry>
+			<entry parent="WGCache" type="ref">
+				<layout size="NORMAL" position="2"/>
+			</entry>
+		</portlets>
+	</portlets>
+</portlets>

@@ -1,0 +1,572 @@
+
+  #mousestockDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mousestockCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mouseweatherDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mouseweatherCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mousehoroscopesDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mousehoroscopesCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mousemappingDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mousemappingCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mouseypDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mouseypCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mousewebsitesDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mousewebsitesCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mousesearchDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mousesearchCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mouseurlentryDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mouseurlentryCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mousefreshmeatDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mousefreshmeatCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mouseslashdotDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mouseslashdotCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mousetopstoriesDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mousetopstoriesCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mousetopbusinessDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mousetopbusinessCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mouseuspoliticsDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mouseuspoliticsCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mousebasketballDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mousebasketballCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mousegolfDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mousegolfCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mouseentertainmentgeneralDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mouseentertainmentgeneralCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mousehealthDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mousehealthCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mouseartsandcultureDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mouseartsandcultureCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mousebookpublishingDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mousebookpublishingCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mouseparentingDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mouseparentingCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #mouseznewsDRAG {
+    position: absolute;
+    left: -200; top: -200;
+    border-color: #000000;
+    layer-background-color: #FFFFFF;
+    background-color: #FFFFFF;
+    clip: rect(0 140 20 0);
+  }
+  #mouseznewsCont {
+    position: absolute;
+    left: 1; top: 1;
+    width: 138;
+    background-color: #6699CC;
+    layer-background-color: #6699CC;
+    clip: rect(0 138 18 0);
+    text-align: center;
+  }
+
+
+  #workSpace {
+    position: absolute; left: 0; top: 0;
+    background-color: #FFFFFF; 
+    layer-background-color: #FFFFFF;
+  }
+
+  #bottomTable {
+    top: -200;
+    position: absolute;
+  }
+
+  #slot0Out {
+    position: absolute; left: 0; top: 0;
+    background-color: #000000; 
+    layer-background-color: #000000;
+  }
+  #slot0In {
+    position: absolute; left: 1; top: 1;
+    background-color: #FFFFFF; 
+    layer-background-color: #FFFFFF;
+  }
+  #slot0Light {
+    position: absolute; left: 1; top: 1;
+    background-color: #6699CC; 
+    layer-background-color: #6699CC;
+    visibility: hidden;
+  }
+  #slot1Out {
+    position: absolute; left: 0; top: 0;
+    background-color: #000000; 
+    layer-background-color: #000000;
+  }
+  #slot1In {
+    position: absolute; left: 1; top: 1;
+    background-color: #FFFFFF; 
+    layer-background-color: #FFFFFF;
+  }
+  #slot1Light {
+    position: absolute; left: 1; top: 1;
+    background-color: #6699CC; 
+    layer-background-color: #6699CC;
+    visibility: hidden;
+  }
+  #slot2Out {
+    position: absolute; left: 0; top: 0;
+    background-color: #000000; 
+    layer-background-color: #000000;
+  }
+  #slot2In {
+    position: absolute; left: 1; top: 1;
+    background-color: #FFFFFF; 
+    layer-background-color: #FFFFFF;
+  }
+  #slot2Light {
+    position: absolute; left: 1; top: 1;
+    background-color: #6699CC; 
+    layer-background-color: #6699CC;
+    visibility: hidden;
+  }
+  #slot3Out {
+    position: absolute; left: 0; top: 0;
+    background-color: #000000; 
+    layer-background-color: #000000;
+  }
+  #slot3In {
+    position: absolute; left: 1; top: 1;
+    background-color: #FFFFFF; 
+    layer-background-color: #FFFFFF;
+  }
+  #slot3Light {
+    position: absolute; left: 1; top: 1;
+    background-color: #6699CC; 
+    layer-background-color: #6699CC;
+    visibility: hidden;
+  }
+  #slot4Out {
+    position: absolute; left: 0; top: 0;
+    background-color: #000000; 
+    layer-background-color: #000000;
+  }
+  #slot4In {
+    position: absolute; left: 1; top: 1;
+    background-color: #FFFFFF; 
+    layer-background-color: #FFFFFF;
+  }
+  #slot4Light {
+    position: absolute; left: 1; top: 1;
+    background-color: #6699CC; 
+    layer-background-color: #6699CC;
+    visibility: hidden;
+  }
+  #slot5Out {
+    position: absolute; left: 0; top: 0;
+    background-color: #000000; 
+    layer-background-color: #000000;
+  }
+  #slot5In {
+    position: absolute; left: 1; top: 1;
+    background-color: #FFFFFF; 
+    layer-background-color: #FFFFFF;
+  }
+  #slot5Light {
+    position: absolute; left: 1; top: 1;
+    background-color: #6699CC; 
+    layer-background-color: #6699CC;
+    visibility: hidden;
+  }
+  #slot6Out {
+    position: absolute; left: 0; top: 0;
+    background-color: #000000; 
+    layer-background-color: #000000;
+  }
+  #slot6In {
+    position: absolute; left: 1; top: 1;
+    background-color: #FFFFFF; 
+    layer-background-color: #FFFFFF;
+  }
+  #slot6Light {
+    position: absolute; left: 1; top: 1;
+    background-color: #6699CC; 
+    layer-background-color: #6699CC;
+    visibility: hidden;
+  }
+  #slot7Out {
+    position: absolute; left: 0; top: 0;
+    background-color: #000000; 
+    layer-background-color: #000000;
+  }
+  #slot7In {
+    position: absolute; left: 1; top: 1;
+    background-color: #FFFFFF; 
+    layer-background-color: #FFFFFF;
+  }
+  #slot7Light {
+    position: absolute; left: 1; top: 1;
+    background-color: #6699CC; 
+    layer-background-color: #6699CC;
+    visibility: hidden;
+  }
+  #slot8Out {
+    position: absolute; left: 0; top: 0;
+    background-color: #000000; 
+    layer-background-color: #000000;
+  }
+  #slot8In {
+    position: absolute; left: 1; top: 1;
+    background-color: #FFFFFF; 
+    layer-background-color: #FFFFFF;
+  }
+  #slot8Light {
+    position: absolute; left: 1; top: 1;
+    background-color: #6699CC; 
+    layer-background-color: #6699CC;
+    visibility: hidden;
+  }
+  #slot9Out {
+    position: absolute; left: 0; top: 0;
+    background-color: #000000; 
+    layer-background-color: #000000;
+  }
+  #slot9In {
+    position: absolute; left: 1; top: 1;
+    background-color: #FFFFFF; 
+    layer-background-color: #FFFFFF;
+  }
+  #slot9Light {
+    position: absolute; left: 1; top: 1;
+    background-color: #6699CC; 
+    layer-background-color: #6699CC;
+    visibility: hidden;
+  }
+

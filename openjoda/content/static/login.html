@@ -1,0 +1,27 @@
+
+
+<!--
+FIX ME:  WARNING:
+THIS MIGHT BREAK IF YOU USE SOMETHING OTHER THAN  /servlet/jetspeed as your 
+Servlet.
+-->
+<center>
+<form accept-charset="UNKNOWN" 
+      method="POST" 
+      action="/servlet/jetspeed/screen/Home/action/JLoginUser" 
+      enctype="application/x-www-form-urlencoded">
+
+<input name="nextscreen" type="hidden" value="Home">
+<input name="showedit" type="hidden" value="false">
+Username: <input size="12" value="" name="username" maxlength="25" type="text">
+<br>
+Password: <input size="12" value="" name="password" maxlength="25" type="password">
+
+<br>
+
+<input name="submit" type="submit" value="Login">
+<br>
+<a href="/jetspeed/screen/NewAccount/nextscreen/Home">Create a new account</a>
+</form>
+
+</center>

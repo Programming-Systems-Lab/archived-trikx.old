@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+<rss version="0.92">
+    
+
+    <channel>
+
+        <title>About Jetspeed</title>
+        <description>
+        Jetspeed is an Open Source Portal Application Server distributed under
+        an Apache style license.  It's main goal is to help Intranet developers
+        and corporations developer Portals in record time.  Jetspeed is fully 
+        Open Source and is based on the following technologies:
+        </description>
+
+        <image>
+            <title>Jetspeed</title>
+            <url>/content/images/microphone.gif</url>
+            <link>http://java.apache.org/jetspeed</link>
+        </image>
+
+        <item>
+
+            <title>Jakarta</title>
+            <link>http://jakarta.apache.org</link>
+            <description>
+            Jakarta is the target Servlet engine of Jetspeed.
+            </description>
+            
+        </item>
+
+        
+        <item>
+
+            <title>Cocoon</title>
+            <link></link>
+            <description>
+            </description>
+            
+        </item>
+
+        
+        <item>
+
+            <title>Apache</title>
+            <link></link>
+            <description>
+            </description>
+            
+        </item>
+        
+        <item>
+
+            <title>Xerces</title>
+            <link></link>
+            <description>
+            </description>
+            
+        </item>
+
+        <item>
+
+            <title>Xalan</title>
+            <link></link>
+            <description>
+            </description>
+            
+        </item>
+
+        <item>
+
+            <title>Element Construction Set</title>
+            <link></link>
+            <description>
+            </description>
+            
+        </item>
+
+        <item>
+
+            <title>Turbine</title>
+            <link></link>
+            <description>
+            </description>
+            
+        </item>
+
+        
+        
+    </channel>
+
+    
+</rss>

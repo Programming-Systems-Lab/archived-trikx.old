@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<rss version="0.91">
+
+    <channel>
+        <title>Apache Jetspeed</title>
+        <link>http://java.apache.org/jetspeed</link>
+        <description>
+        An Open Source Enterprise Information Portal.
+        </description>
+
+        <image>
+            <title>Apache Jetspeed</title>
+            <url>/content/images/jetspeed-powered.gif</url>
+            <link>http://java.apache.org/jetspeed</link>
+        </image>
+
+
+        <item>
+
+            <title>Jetspeed Documentation</title>
+            <link>http://java.apache.org/jetspeed</link>
+            <description>
+            Jetspeed is an Open Source implementation of an Enterprise Information Portal
+            (or Web Based Groupware).  Jetspeed attempts to consume information from multiple
+            resources on the Internet and helps the user manage large amounts of data.  
+            This information can come from multiple content types from XML to SMTP to newer
+            protocols such as iCalendar.
+            </description>
+            
+        </item>
+    
+        <item>
+            <title>XML at Jetspeed</title>
+            <link>http://www.xml.com/print/2000/05/15/jetspeed/index.html</link>
+            <description>
+            An xml.com article on Jetspeed which covers RSS/OCS and our PSML implementation.
+            </description>
+        </item>
+    
+    
+    </channel>
+
+</rss>
+

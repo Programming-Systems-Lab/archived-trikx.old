@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<portlets user="default" xmlns="http://xml.apache.org/jetspeed/2000/psml">
+
+	<controller name="org.apache.jetspeed.portal.controllers.CardPortletController">
+		<parameter name="parameter" value="pane"/>
+	</controller>
+
+	<control name="org.apache.jetspeed.portal.controls.PanedPortletControl"/>
+    
+	<skin>
+		<property name="selected-color" value="#990000"/>
+		<property name="background-color" value="FFFFFF"/>
+		<property name="title-color" value="#FFCC00"/>
+	</skin>
+
+	<portlets>
+		<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController">
+			<parameter name="sizes" value="66%,34%"/>
+			<parameter name="mode" value="row"/>		
+		</controller>
+
+		<layout position="0"/>
+		
+		<metainfo>
+			<title>Home Page</title>
+		</metainfo>
+
+		<skin>
+			<property name="background-color" value="#FFFFFF"/>
+		</skin>
+
+		<portlets>
+			<controller name="org.apache.jetspeed.portal.controllers.FlowPortletController"/>
+
+			<layout position="0"/>
+
+		        <entry type="ref" parent="JetspeedContent">
+	        		<layout position="0"/>
+	        	</entry>
+	        </portlets>
+
+		<portlets>
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+
+			<layout position="1"/>
+			
+	        	<entry type="ref" parent="Jetspeed">
+	        		<layout position="0"/>
+		        </entry>
+
+		        <entry type="ref" parent="Search">
+	        		<layout position="1"/>
+	        	</entry>
+        </portlets>
+
+    </portlets>
+
+	<portlets>
+		<controller name="org.apache.jetspeed.portal.controllers.GridPortletController">
+			<parameter name="columns" value="1"/>
+			<parameter name="columnWidths" value="95%"/>
+		</controller>
+		
+		<layout position="1"/>
+
+		<metainfo>
+			<title>RSS Sources</title>
+		</metainfo>
+        
+		<skin>
+			<property name="background-color" value="#ffffff"/>
+		</skin>
+
+	        <portlets>
+			<controller name="org.apache.jetspeed.portal.controllers.CardPortletController">
+				<parameter name="defaultcard" value="0"/>
+				<parameter name="parameter" value="channel"/>
+			</controller>
+			
+			<control name="org.apache.jetspeed.portal.controls.PanedPortletControl"/>
+			
+			<skin>
+				<property name="selected-color" value="#FFCC00"/>
+				<property name="title-color" value="#FFFFFF"/>
+			</skin>
+			
+			<layout>
+				<property name="row" value="0"/>
+				<property name="column" value="0"/>
+			</layout>
+			
+        		<entry type="ref" parent="Slashdot">
+        			<control name="org.apache.jetspeed.portal.controls.ClearPortletControl"/>
+      	    			<layout position="0"/>
+        		</entry>
+
+		        <entry type="ref" parent="Mozilla">
+        			<control name="org.apache.jetspeed.portal.controls.ClearPortletControl"/>
+      	    			<layout position="1"/>
+		        </entry>
+
+		        <entry type="ref" parent="Apacheweek">
+      	    			<layout position="2"/>
+		        </entry>
+
+		        <entry type="ref" parent="XMLHack">
+      	    			<layout position="3"/>
+		        </entry>
+
+
+		</portlets>
+	</portlets>
+
+</portlets>

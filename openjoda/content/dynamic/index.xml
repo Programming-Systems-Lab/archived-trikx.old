@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="/content/dynamic/index.xsl" type="text/xsl"?>
+<?cocoon-process type="xslt"?>
+
+<example>
+
+This is a test of Cocoon
+
+</example>

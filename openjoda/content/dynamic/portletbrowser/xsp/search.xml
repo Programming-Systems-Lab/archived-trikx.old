@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+
+
+<?cocoon-process type="xsp"?>
+<?cocoon-process type="xslt"?>
+<?xml-stylesheet href="index.xsl" type="text/xsl"?>
+
+<!--
+Author: Kevin A Burton (burton@apache.org)
+Version:  $Id$
+-->
+
+<xsp:page language="java" 
+          xmlns:xsp="http://www.apache.org/1999/XSP/Core">
+
+    <xsp:structure>
+        <xsp:include>org.apache.turbine.util.*</xsp:include>
+        <xsp:include>org.apache.jetspeed.daemon.*</xsp:include>
+        <xsp:include>org.apache.jetspeed.daemon.impl.*</xsp:include>
+        <xsp:include>org.apache.jetspeed.portal.util.*</xsp:include>
+        <xsp:include>org.apache.jetspeed.portal.*</xsp:include>
+        <xsp:include>org.apache.jetspeed.portal.factory.*</xsp:include>
+        <xsp:include>org.apache.jetspeed.util.servlet.*</xsp:include>
+    </xsp:structure> 
+                      
+    <portletlist>
+
+        <!--
+        FIX ME: The explicit use of JetspeedServletConfig() here is *bad*.
+        Remove this by adding an explicit "config" object to the Cocoon XSP 
+        specification
+        -->
+
+        <xsp:logic>
+        RunData rundata = RunDataFactory.getRunData( request, response, new JetspeedServletConfig() );
+        </xsp:logic>
+
+
+        <xsp:logic>
+                <![CDATA[
+            int total = 0;
+            int start = 0;
+            int end = 0;
+            int count = 0;
+
+            Portlet[] portlets = new Portlet[0];
+            
+            String query = rundata.getParameters().getString("query");
+
+            if ( query != null ) {
+
+                portlets = PortletBrowser.search( query , rundata );                
+		
+	        start = rundata.getParameters().getInt("start");
+	        end = rundata.getParameters().getInt("end");
+		if(end == 0) {
+		   end = PortletBrowser.getEnd( rundata );
+		   }
+	        int from = start;
+	        if(start > portlets.length)
+                  {
+	            from = portlets.length;
+	          }
+	        int upTo = end;
+	        if (portlets.length < end)
+	          {
+	            upTo = portlets.length;
+	          }
+
+                start = from;
+                total = portlets.length;
+                end = upTo;
+
+            }
+                ]]>
+
+        </xsp:logic>
+
+
+        <total>
+            <xsp:expr>total</xsp:expr>
+        </total>
+    
+        <start>
+            <xsp:expr>start</xsp:expr>
+        </start>
+        
+        <end>
+            <xsp:expr>end</xsp:expr>
+        </end>
+
+        <browse><xsp:expr>PortletURIManager.getPortletMaxURI( "PortletBrowser" )</xsp:expr></browse>
+        <search><xsp:expr>PortletURIManager.getPortletMaxURI( "PortletSearch" )</xsp:expr></search>
+        <url><xsp:expr>rundata.getParameters().getString("url")</xsp:expr></url>
+	<query><xsp:expr>query</xsp:expr></query>        
+        <nextpage>
+        
+        
+        
+            <url><xsp:expr>PortletURIManager.getPortletMaxURI( "PortletSearch" )</xsp:expr></url>
+
+        
+            <start><xsp:expr>start + PortletBrowser.getCount()</xsp:expr></start>
+            
+            <end><xsp:expr>end + PortletBrowser.getCount()</xsp:expr></end>
+            
+            
+            <!-- 
+            Now add the parameters that you need to tack on to the end of the form
+            in the next page
+            -->
+            
+            <!--
+            FIX ME:  don't use the request object here.  Add a method in Turbine's
+            ParamaterParser so that you can do this withoiut having everything 
+            typed
+            -->
+            <xsp:logic>
+                <![CDATA[
+                Enumeration enum = rundata.getRequest().getParameterNames();
+                
+                while( enum.hasMoreElements() ) {
+                    String name = (String)enum.nextElement();
+                    if(name.equals("start")) continue;
+                    if(name.equals("end")) continue;
+                ]]>
+
+                    <parameter>
+                    
+                        <xsp:attribute name="name"><xsp:expr>name</xsp:expr></xsp:attribute>
+
+                        <xsp:attribute name="value"><xsp:expr>rundata.getRequest().getParameter( name )</xsp:expr></xsp:attribute>
+                        
+                    </parameter>
+                
+                }
+            </xsp:logic>
+            
+            
+        </nextpage>
+
+            <xsp:logic><![CDATA[
+            for ( int i = start; i < end ; ++i ) { ]]>
+
+                <entry>
+                
+                    <xsp:logic>
+                        Log.note( "PortletBrowser: browsing portlet: " + (start + i) + " of a total of " + total );
+                    </xsp:logic>
+                
+                    <title>
+                       <xsp:expr>portlets[i].getTitle()</xsp:expr>
+                    </title>
+                
+                    <description>
+                       <xsp:expr>portlets[i].getDescription()</xsp:expr>
+                    </description>
+                    
+                    <!-- Build out the preview URL -->
+                    <preview>
+                        <xsp:expr>
+                            PortletURIManager.getPortletEditURI( portlets[i] ).toString()
+                        </xsp:expr>
+                    </preview>
+                    
+                </entry>                
+            
+            }
+            </xsp:logic>
+
+
+    </portletlist>
+                          
+
+</xsp:page>          

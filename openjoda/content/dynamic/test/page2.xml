@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<!-- Author: Stefano Mazzocchi "stefano@apache.org" -->
+<!-- Version: $Id$ -->
+
+<?cocoon-process type="xslt"?>
+<?xml-stylesheet href="page-xsp.xsl" type="text/xsl"?>
+
+<page>
+  <title>First XSP Page</title>
+  <author>
+   <name>Stefano Mazzocchi</name>
+   <address>stefano@apache.org</address>
+  </author>
+      
+  <p>Hi, I'm your first XSP page ever.</p>
+  
+  <count/>
+  
+  <p>The content you are seeing in this page is provided to you
+  by an XML content producer that was compiled into Java bytecode
+  and executed at request time. This allows greater flexibility and
+  ease of use for page programmers without any performance degradation
+  since all XML parsing and such is precompiled and it's avoided at
+  request time.</p>
+  
+  <p>Let's show some useful information with expression evaluation...</p>
+  
+  <request-headers/>
+  
+  <servlet-parameters/>
+  
+  <p>Enjoy XSP!</p>
+</page>

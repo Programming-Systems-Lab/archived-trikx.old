@@ -1,0 +1,211 @@
+<?xml version="1.0"?>
+
+<!--
+ * Copyright (c) 1998 The Java Apache Project.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer. 
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the
+ *    distribution.
+ *
+ * 3. Every modification must be notified to the Java Apache Project
+ *    and redistribution of the modified code without prior notification
+ *    is not permitted in any form.
+ *
+ * 4. All advertising materials mentioning features or use of this
+ *    software must display the following acknowledgment:
+ *    "This product includes software developed by the Java Apache Project
+ *    (http://java.apache.org/)."
+ *
+ * 5. The names "Jetspeed", "Apache Jetspeed" and "Apache Jetspeed 
+ *    Project" must not be used to endorse or promote products 
+ *    derived from this software without prior written permission.
+ *
+ * 6. Redistributions of any form whatsoever must retain the following
+ *    acknowledgment:
+ *    "This product includes software developed by the Java Apache Project
+ *    (http://java.apache.org/)."
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE JAVA APACHE PROJECT "AS IS" AND ANY
+ * EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE JAVA APACHE PROJECT OR
+ * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
+ * 
+ * License version 1.0
+ *
+-->
+
+<content version="1.0.0">
+
+  <!--
+  TODO: break the quote portion out into:
+
+  <quote>
+    <content>
+    <url>
+  </quote>
+    
+  -->
+ 
+    <channel>
+        <title>Jetspeed</title>
+        <link>http://java.apache.org/jetspeed</link>
+        <description>
+        Jetspeed content
+        </description>
+
+        <topics>
+
+            <entry name="jetspeed">
+                <image>
+                    <title>Jetspeed</title>
+                    <url>/content/images/topics/jetspeed.gif</url>
+                    <link>http://java.apache.org/jetspeed</link>
+                </image>
+            </entry>
+
+
+            <entry name="apache">
+                <image>
+                    <title>Apache</title>
+                    <url>/content/images/topics/apache.gif</url>
+                    <link>http://www.apache.org</link>
+                </image>
+            </entry>
+
+            <entry name="ibm">
+                <image>
+                    <title>IBM</title>
+                    <url>/content/images/topics/ibm.gif</url>
+                    <link>http://www.ibm.com</link>
+                </image>
+            </entry>
+
+
+            <entry name="internet">
+                <image>
+                    <title>Internet</title>
+                    <url>/content/images/topics/internet.gif</url>
+                    <link>http://www.w3c.org</link>
+                </image>
+            </entry>
+
+            <entry name="java">
+                <image>
+                    <title>Java</title>
+                    <url>/content/images/topics/java.gif</url>
+                    <link>http://java.sun.com</link>
+                </image>
+            </entry>
+            
+            <entry name="linux">
+                <image>
+                    <title>Linux</title>
+                    <url>/content/images/topics/linux.gif</url>
+                    <link>http://www.linux.org</link>
+                </image>
+            </entry>
+
+            <entry name="news">
+                <image>
+                    <title>NEWS</title>
+                    <url>/content/images/topics/news.gif</url>
+                    <link/>
+                </image>
+            </entry>
+            
+            <entry name="programming">
+                <image>
+                    <title>Programming</title>
+                    <url>/content/images/topics/programming.gif</url>
+                    <link/>
+                </image>
+            </entry>
+
+            <entry name="sun">
+                <image>
+                    <title>SUN Microsystems</title>
+                    <url>/content/images/topics/sun.gif</url>
+                    <link/>
+                </image>
+            </entry>
+            
+        </topics>
+
+
+        <!-- BLANK ENTRY -->
+        <!--
+        <item>
+            <topic>java</topic>
+            <title></title>
+            <link></link>
+            <description>
+            </description>
+        </item>
+        -->
+
+        <item>
+            <topic>jetspeed</topic>
+            <title>XML at Jetspeed</title>
+            <link>http://www.xml.com/print/2000/05/15/jetspeed/index.html</link>
+            <description>
+            XML.com just published an article about my Jetspeed project.  Positive press is a good thing :)
+            </description>
+        </item>
+
+
+        <item>
+            <topic>apache</topic>
+            <title>Alexandria now part of Apache</title>
+            <link>http://java.apache.org/alexandria</link>
+            <description>
+            Alexandria is now officially a Java/Apache project.  The license is now APL
+            and hopefully will gain significant attention from its sister projects. 
+            </description>
+        </item>
+
+        <item>
+            <topic>apache</topic>
+            <title>Java Cross Reference (JXR) now integrated into Alexandria</title>
+            <link>http://relativity.yi.org/alexandria/content/html/jxr</link>
+            <description>
+            Tonight I finished building out the Java Cross Reference tool into 
+            Alexandria.  It works rather well.  Goes across all code and then 
+            writes .html files from the Java.  It currently only does syntax 
+            highlighting but the Cross Reference shouldn't be that hard.
+            </description>
+        </item>
+
+
+
+        <item>
+            <topic>jetspeed</topic>
+            <title>Apache Jetspeed 1.0 ships!</title>
+            <link>http://java.apache.org/jetspeed</link>
+            <description>
+            21 March 2000 - Jetspeed 1.0 just made it out the door. This version 
+            implements many Portal features and integrates with other Java/XML Apache 
+            projects such as Cocoon, Turbine, and ECS. You can get it here. Jetspeed 
+            is intended to be a replacement for Enterprise portals such as Yahoo, 
+            Netscape, etc. 
+            </description>
+        </item>
+
+    </channel>
+
+</content>

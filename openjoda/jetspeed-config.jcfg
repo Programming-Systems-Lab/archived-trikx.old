@@ -1,0 +1,943 @@
+<?xml version="1.0"?>
+<!DOCTYPE jetspeed-config SYSTEM "http://localhost:8080/jetspeed-config.dtd">
+<jetspeed-config xmlns="http://xml.apache.org/jetspeed/2000/jetspeed-config">
+	<portlet-registry>
+		<portlet-entry application="false" admin="false" hidden="false" type="abstract" name="RSS">
+			<classname>org.apache.jetspeed.portal.portlets.RSSPortlet</classname>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<parameter value="/content/xsl/rss.xsl" name="stylesheet"/>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" hidden="false" type="abstract" name="FileServer">
+			<classname>org.apache.jetspeed.portal.portlets.FileServerPortlet</classname>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" hidden="false" type="instance" name="JetspeedContent">
+			<classname>org.apache.jetspeed.portal.portlets.JetspeedContent</classname>
+			<parameter value="jetspeed" name="provider-name"/>
+		</portlet-entry>
+		<portlet-entry application="false" admin="true" hidden="false" type="instance" name="PortletAdministration">
+			<classname>com.xo3.jetspeed.portal.portlets.admin.PortletRegistryAdmin</classname>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" hidden="false" type="abstract" name="Cocoon">
+			<classname>org.apache.jetspeed.portal.portlets.CocoonPortlet</classname>
+		</portlet-entry>
+		<!-- Pre ApacheCon - broken at present
+
+		<portlet-entry application="true" admin="false" parent="Cocoon" hidden="false" type="ref" name="PortletBrowser">
+			<url>/content/dynamic/portletbrowser/xsp/index.xml</url>
+			<parameter value="/content/dynamic/portletbrowser/xsp/index.xsl" name="stylesheet"/>
+			<meta-info>
+				<title>Channel Browser</title>
+				<description>Browse channels available within Jetspeed.</description>
+			</meta-info>
+		</portlet-entry>
+		-->
+
+		<portlet-entry application="true" admin="false" parent="Cocoon" hidden="false" type="ref" name="PortletSearch">
+			<url>/content/dynamic/portletbrowser/xsp/search.xml</url>
+			<parameter value="/content/dynamic/portletbrowser/xsp/search.xsl" name="stylesheet"/>
+			<meta-info>
+				<title>Channel Search</title>
+				<description>Search channels available within Jetspeed.</description>
+			</meta-info>
+		</portlet-entry>
+		<!-- Pre ApacheCon - broken at present
+		<portlet-entry application="true" admin="false" parent="Cocoon" hidden="false" type="ref" name="Customizer">
+			<url>/content/dynamic/customizer/xsp/ui.xml</url>
+			<parameter value="/content/dynamic/customizer/xsl/ui-generic.xsl" name="stylesheet"/>
+			<meta-info>
+				<title>Customize your page layout</title>
+				<description>Customize your own home page.</description>
+			</meta-info>
+		</portlet-entry>
+		-->
+		<!-- LAYOUT PORTLET -->
+		<portlet-entry application="false" admin="false" hidden="false" type="instance" name="Layout">
+			<classname>com.xo3.jetspeed.portal.portlets.LayoutPortlet</classname>
+		</portlet-entry>
+		<portlet-entry application="true" admin="false" parent="Cocoon" hidden="false" type="ref" name="XSPApplication">
+			<url>/content/dynamic/xsp/index.xml</url>
+			<parameter value="/content/dynamic/xsp/index.xsl" name="stylesheet"/>
+			<meta-info>
+				<title>Sample XSP Application</title>
+				<description>Sample XSP Application.</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" hidden="false" type="instance" name="Applications">
+			<classname>org.apache.jetspeed.portal.portlets.ApplicationsPortlet</classname>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" hidden="true" type="instance" name="PortletInfoPortlet">
+			<classname>org.apache.jetspeed.portal.portlets.PortletInfoPortlet</classname>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" hidden="true" type="abstract" name="TEST_ABSTRACT">
+			<classname>test.Test</classname>
+			<url>/test/test.xml</url>
+			<parameter value="/test/test.xsl" name="stylesheet"/>
+			<meta-info>
+				<title>Test title</title>
+				<description>Test description</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="TEST_ABSTRACT" hidden="true" type="ref" name="TEST_REF"/>
+		<portlet-entry application="false" admin="false" hidden="false" type="instance" name="NewsFeedPortlet">
+			<classname>com.xo3.jetspeed.portal.portlets.NewsFeedPortlet</classname>
+			<meta-info>
+				<title>News Feed Browser</title>
+				<description>Allows you to add new feed content to your portal</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" hidden="false" type="instance" name="NewsFeedManager">
+			<classname>com.xo3.jetspeed.portal.portlets.RegistryPortlet</classname>
+			<meta-info>
+				<title>News Feed Manager</title>
+				<description>Allows you to view the list of installed news feeds as well as remove some</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="true" hidden="false" type="instance" name="GlobalAdminPortlet">
+			<classname>org.apache.jetspeed.portal.portlets.admin.GlobalAdminPortlet</classname>
+		</portlet-entry>
+		<portlet-entry application="false" admin="true" hidden="false" type="instance" name="SelectPortlet">
+			<classname>org.apache.jetspeed.portal.portlets.admin.SelectPortlet</classname>
+		</portlet-entry>
+		<portlet-entry application="false" admin="true" hidden="false" type="instance" name="JetspeedPropertiesPortlet">
+			<classname>org.apache.jetspeed.portal.portlets.admin.JetspeedPropertiesPortlet</classname>
+		</portlet-entry>
+		<portlet-entry application="false" admin="true" hidden="false" type="instance" name="TurbinePortlet">
+			<classname>com.ubiquity.jetspeed.portal.portlets.admin.TurbinePortlet</classname>
+		</portlet-entry>
+		<portlet-entry application="false" admin="true" hidden="false" type="instance" name="MemoryStorePortlet">
+			<classname>org.apache.jetspeed.portal.portlets.admin.MemoryStorePortlet</classname>
+		</portlet-entry>
+		<portlet-entry application="false" admin="true" hidden="false" type="instance" name="JavaRuntimePortlet">
+			<classname>org.apache.jetspeed.portal.portlets.admin.JavaRuntimePortlet</classname>
+		</portlet-entry>
+		<portlet-entry application="false" admin="true" hidden="false" type="instance" name="DaemonAdminPortlet">
+			<classname>org.apache.jetspeed.portal.portlets.admin.DaemonAdminPortlet</classname>
+		</portlet-entry>
+		<portlet-entry application="false" admin="true" hidden="false" type="instance" name="JetspeedContentAdmin">
+			<classname>org.apache.jetspeed.portal.portlets.admin.JetspeedContentAdmin</classname>
+		</portlet-entry>
+		<portlet-entry application="false" admin="true" hidden="false" type="instance" name="BadURLManagerPortlet">
+			<classname>org.apache.jetspeed.portal.portlets.admin.BadURLManagerPortlet</classname>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="FileServer" hidden="false" type="ref" name="Search">
+			<url>/content/static/search.html</url>
+			<meta-info>
+				<title>Search</title>
+				<description>Search the Internet</description>
+			</meta-info>
+		</portlet-entry>
+
+		<portlet-entry application="false" admin="false" parent="FileServer" hidden="false" type="ref" name="Gauge">
+			<url>/content/static/gauge.html</url>
+			<meta-info>
+				<title>Gauge</title>
+				<description>Gauge</description>
+			</meta-info>
+		</portlet-entry> 
+		<portlet-entry application="false" admin="false" parent="FileServer" hidden="false" type="ref" name="Metaparser">
+			<url>/content/static/metaparser.html</url>
+			<meta-info>
+				<title>Metaparser</title>
+				<description>Metaparser</description>
+			</meta-info>
+		</portlet-entry> 
+	      <portlet-entry application="false" admin="false" parent="FileServer" hidden="false" type="ref" name="Oracle">
+			<url>/content/static/oracle.html</url>
+			<meta-info>
+				<title>Oracle</title>
+				<description>Oracle</description>
+			</meta-info>
+		</portlet-entry> 
+		<portlet-entry application="false" admin="false" parent="FileServer" hidden="false" type="ref" name="WGCache">
+			<url>/content/static/wgcache.html</url>
+			<meta-info>
+				<title>WGCache</title>
+				<description>WGCache</description>
+			</meta-info>
+		</portlet-entry> 
+
+		<portlet-entry application="false" admin="false" parent="FileServer" hidden="false" type="ref" name="Components">
+			<url>/content/static/tree/directory.html</url>
+			<meta-info>
+				<title>Components</title>
+				<description>Components</description>
+			</meta-info>
+		</portlet-entry>
+
+
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="XMLHack">
+			<url>http://www.xmlhack.com/rss.php</url>
+			<meta-info>
+				<title>XMLHack</title>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="XMLHack-WML">
+			<url>http://www.xmlhack.com/rss.php</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<parameter value="/content/xsl/rss-wml.xsl" name="stylesheet"/>
+			<meta-info>
+				<title>XMLHack</title>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Apacheweek">
+			<url>http://www.apacheweek.com/issues/apacheweek-headlines.xml</url>
+			<meta-info>
+				<title>Apacheweek</title>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Apacheweek-WML">
+			<url>http://www.apacheweek.com/issues/apacheweek-headlines.xml</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<parameter value="/content/xsl/rss-wml.xsl" name="stylesheet"/>
+			<meta-info>
+				<title>Apacheweek</title>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Mozilla">
+			<url>http://www.mozilla.org/news.rdf</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Mozilla</title>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Mozilla-WML">
+			<url>http://www.mozilla.org/news.rdf</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<parameter value="/content/xsl/rss-wml.xsl" name="stylesheet"/>
+			<meta-info>
+				<title>Mozilla</title>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Jetspeed">
+			<url>/content/xml/rss/Jetspeed.rss</url>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="FileServer" hidden="true" type="ref" name="login">
+			<url>/content/static/login.html</url>
+			<meta-info>
+				<title>Login</title>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Book reviews">
+			<url>http://p.moreover.com/cgi-local/page?index_bookreviews+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Book reviews</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Natural health">
+			<url>http://p.moreover.com/cgi-local/page?index_naturalhealth+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Natural health</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Jokes">
+			<url>http://p.moreover.com/cgi-local/page?index_jokes+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Jokes</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Fitness">
+			<url>http://p.moreover.com/cgi-local/page?index_fitness+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Fitness</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="AT&amp;T">
+			<url>http://p.moreover.com/cgi-local/page?index_att+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>AT&amp;T</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Honeywell International">
+			<url>http://p.moreover.com/cgi-local/page?index_honeywell+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Honeywell International</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Banking">
+			<url>http://p.moreover.com/cgi-local/page?index_banking+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Banking</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Fund management">
+			<url>http://p.moreover.com/cgi-local/page?index_fundmanagement+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Fund management</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Business features">
+			<url>http://p.moreover.com/cgi-local/page?index_businessfeatures+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Business features</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Marketing">
+			<url>http://p.moreover.com/cgi-local/page?index_marketing+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Marketing</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Agriculture">
+			<url>http://p.moreover.com/cgi-local/page?index_agriculture+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Agriculture</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Consumer non-durables ">
+			<url>http://p.moreover.com/cgi-local/page?index_consumernondurables+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Consumer non-durables</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Hospitality">
+			<url>http://p.moreover.com/cgi-local/page?index_hospitalityindustry+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Hospitality</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Cyberculture">
+			<url>http://p.moreover.com/cgi-local/page?index_cyberculture+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Cyberculture</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Domain name">
+			<url>http://p.moreover.com/cgi-local/page?index_domainname+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Domain name</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Dot com doom">
+			<url>http://p.moreover.com/cgi-local/page?index_dotcomdoom+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Dot com doom</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="E-commerce">
+			<url>http://p.moreover.com/cgi-local/page?index_e-commerce+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>E-commerce</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Internet Europe">
+			<url>http://p.moreover.com/cgi-local/page?index_interneteurope+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Internet Europe</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Internet Germany">
+			<url>http://p.moreover.com/cgi-local/page?index_internetgermany+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Internet Germany</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Internet Latin America">
+			<url>http://p.moreover.com/cgi-local/page?index_internetlatinamerica+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Internet Latin America</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Internet consultancies">
+			<url>http://p.moreover.com/cgi-local/page?index_internetconsult+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Internet consultancies</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Internet features">
+			<url>http://p.moreover.com/cgi-local/page?index_internetfeatures+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Internet features</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Internet global">
+			<url>http://p.moreover.com/cgi-local/page?index_internetinternational+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Internet global</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Online access">
+			<url>http://p.moreover.com/cgi-local/page?index_onlineaccess+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Online access</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Online auctions">
+			<url>http://p.moreover.com/cgi-local/page?index_onlineauction+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Online auctions</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Online content">
+			<url>http://p.moreover.com/cgi-local/page?index_onlinecontent+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Online content</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Online information">
+			<url>http://p.moreover.com/cgi-local/page?index_onlineinformation+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Online information</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Online legal issues">
+			<url>http://p.moreover.com/cgi-local/page?index_onlinelegalissues+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Online legal issues</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Online marketing">
+			<url>http://p.moreover.com/cgi-local/page?index_onlinemarketing+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Online marketing</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Online portals">
+			<url>http://p.moreover.com/cgi-local/page?index_onlineportals+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Online portals</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Online search engines">
+			<url>http://p.moreover.com/cgi-local/page?index_searchengines+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Online search engines</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Top internet">
+			<url>http://p.moreover.com/cgi-local/page?index_topinternet+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Top internet</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Vertical portals">
+			<url>http://p.moreover.com/cgi-local/page?index_verticalportals+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Vertical portals</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Web developer">
+			<url>http://p.moreover.com/cgi-local/page?index_webdeveloper+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Web developer</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Webmaster tips">
+			<url>http://p.moreover.com/cgi-local/page?index_webmastertips+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Webmaster tips</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Website owner">
+			<url>http://p.moreover.com/cgi-local/page?index_websiteowner+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Website owner</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Europe">
+			<url>http://p.moreover.com/cgi-local/page?index_europe+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Europe</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="UK">
+			<url>http://p.moreover.com/cgi-local/page?index_uknews+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>UK</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Olympic games">
+			<url>http://p.moreover.com/cgi-local/page?index_olympicgames+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Olympic games</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Olympic sports">
+			<url>http://p.moreover.com/cgi-local/page?index_olympics+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Olympic sports</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Communications equipment">
+			<url>http://p.moreover.com/cgi-local/page?index_commsequipment+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Communications equipment</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Computer games">
+			<url>http://p.moreover.com/cgi-local/page?index_computergames+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Computer games</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Computer security">
+			<url>http://p.moreover.com/cgi-local/page?index_computersecurity+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Computer security</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Computer services">
+			<url>http://p.moreover.com/cgi-local/page?index_computerservices+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Computer services</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Developer">
+			<url>http://p.moreover.com/cgi-local/page?index_developer+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Developer</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Digital television">
+			<url>http://p.moreover.com/cgi-local/page?index_digitaltelevision+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Digital television</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Enterprise computing">
+			<url>http://p.moreover.com/cgi-local/page?index_enterprisecomputing+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Enterprise computing</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Database">
+			<url>http://p.moreover.com/cgi-local/page?index_databaseindustry+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Database</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Graphics">
+			<url>http://p.moreover.com/cgi-local/page?index_graphics+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Graphics</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Handhelds">
+			<url>http://p.moreover.com/cgi-local/page?index_handhelds+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Handhelds</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Imaging equipment">
+			<url>http://p.moreover.com/cgi-local/page?index_imagingequipment+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Imaging equipment</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Java">
+			<url>http://p.moreover.com/cgi-local/page?index_java+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Java</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Linux">
+			<url>http://p.moreover.com/cgi-local/page?index_linux+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Linux</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Motorola">
+			<url>http://p.moreover.com/cgi-local/page?index_motorola+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Motorola</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="OS">
+			<url>http://p.moreover.com/cgi-local/page?index_os+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>OS</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Opensource">
+			<url>http://p.moreover.com/cgi-local/page?index_opensource+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Opensource</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="PC software">
+			<url>http://p.moreover.com/cgi-local/page?index_pcsoftware+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>PC software</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Semiconductor">
+			<url>http://p.moreover.com/cgi-local/page?index_semiconductorindustry+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Semiconductor</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Robotics">
+			<url>http://p.moreover.com/cgi-local/page?index_robotics+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Robotics</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Tech latest">
+			<url>http://p.moreover.com/cgi-local/page?index_techlatest+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Tech latest</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Tech features">
+			<url>http://p.moreover.com/cgi-local/page?index_techfeatures+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Tech features</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Tech policy">
+			<url>http://p.moreover.com/cgi-local/page?index_techpolicy+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Tech policy</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Virus warning">
+			<url>http://p.moreover.com/cgi-local/page?index_viruswarning+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Virus warning</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Windows 2000">
+			<url>http://p.moreover.com/cgi-local/page?index_windows+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Windows 2000</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Wireless sector">
+			<url>http://p.moreover.com/cgi-local/page?index_wireless+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Wireless sector</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Atlanta">
+			<url>http://p.moreover.com/cgi-local/page?index_atlanta+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Atlanta</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="LA">
+			<url>http://p.moreover.com/cgi-local/page?index_la+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>LA</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="New York">
+			<url>http://p.moreover.com/cgi-local/page?index_newyork+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>New York</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Silicon Valley">
+			<url>http://p.moreover.com/cgi-local/page?index_siliconvalley+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Silicon Valley</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="xx">
+			<url>http://headlines.isyndicate.com/pages/xo3/2.html</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>xx</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="PC industry">
+			<url>http://p.moreover.com/cgi-local/page?index_pcindustry+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>PC industry</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Tech events">
+			<url>http://p.moreover.com/cgi-local/page?index_techevents+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Tech events</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Telecom">
+			<url>http://p.moreover.com/cgi-local/page?index_telecom+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Telecom</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="Top technology">
+			<url>http://p.moreover.com/cgi-local/page?index_toptechnology+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>Top technology</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="WAP">
+			<url>http://p.moreover.com/cgi-local/page?index_wap+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>WAP</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry application="false" admin="false" parent="RSS" hidden="false" type="ref" name="XML and metadata">
+			<url>http://p.moreover.com/cgi-local/page?index_xml+rss</url>
+			<parameter value="10" type="int" name="itemDisplayed"/>
+			<meta-info>
+				<title>XML and metadata</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry type="instance" name="OandaCurrency">
+			<classname>com.xo3.jetspeed.portal.portlets.OandaCurrencyPortlet</classname>
+			<parameter value="USD:EUR EUR:USD USD:GBP USD:JPY USD:CHF" name="currencies"/>
+			<meta-info>
+				<title>Oanda Currency Table</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>
+		<portlet-entry type="instance" name="YahooDayChart">
+			<classname>com.xo3.jetspeed.portal.portlets.YahooChartPortlet</classname>
+			<parameter value="IXIC" name="marketcode"/>
+			<meta-info>
+				<title>Yahoo Day Chart</title>
+				<description>unknown</description>
+			</meta-info>
+		</portlet-entry>		
+		
+		<portlet-entry type="instance" name="BillionairesPortlet">
+			<classname>com.xo3.jetspeed.portal.portlets.BillionairesPortlet</classname>
+			<parameter name="stylesheet" value="/content/xsl/billionaires.xsl"/>
+		</portlet-entry>
+	</portlet-registry>
+	<portlet-control-registry>
+		<portlet-control-entry name="BorderPortletControl">
+			<classname>org.apache.jetspeed.portal.controls.BorderPortletControl</classname>
+			<meta-info>
+				<title>BorderPortletControl</title>
+			</meta-info>
+			<media-type ref="html"/>
+		</portlet-control-entry>
+		<portlet-control-entry name="ClearPortletControl">
+			<classname>org.apache.jetspeed.portal.controls.ClearPortletControl</classname>
+			<meta-info>
+				<title>ClearPortletControl</title>
+			</meta-info>
+			<media-type ref="html"/>
+		</portlet-control-entry>
+		<portlet-control-entry name="TitlePortletControl">
+			<classname>org.apache.jetspeed.portal.controls.TitlePortletControl</classname>
+			<meta-info>
+				<title>TitlePortletControl</title>
+			</meta-info>
+			<media-type ref="html"/>
+		</portlet-control-entry>
+		<portlet-control-entry name="PanedPortletControl">
+			<classname>org.apache.jetspeed.portal.controls.PanedPortletControl</classname>
+			<meta-info>
+				<title>PanedPortletControl</title>
+			</meta-info>
+			<media-type ref="html"/>
+		</portlet-control-entry>
+	</portlet-control-registry>
+	<portlet-controller-registry>
+		<portlet-controller-entry name="CardPortletController">
+			<classname>org.apache.jetspeed.portal.controllers.CardPortletController</classname>
+			<media-type ref="html"/>
+		</portlet-controller-entry>
+		<portlet-controller-entry name="DefaultPortletController">
+			<classname>org.apache.jetspeed.portal.controllers.DefaultPortletController</classname>
+			<media-type ref="html"/>
+		</portlet-controller-entry>
+		<portlet-controller-entry name="FlowPortletController">
+			<classname>org.apache.jetspeed.portal.controllers.FlowPortletController</classname>
+			<media-type ref="html"/>
+		</portlet-controller-entry>
+		<portlet-controller-entry name="GridPortletController">
+			<classname>org.apache.jetspeed.portal.controllers.GridPortletController</classname>
+			<media-type ref="html"/>
+		</portlet-controller-entry>
+		<portlet-controller-entry name="RowColumnPortletController">
+			<classname>org.apache.jetspeed.portal.controllers.RowColumnPortletController</classname>
+			<media-type ref="html"/>
+		</portlet-controller-entry>
+		<portlet-controller-entry name="WAPPortletController">
+			<classname>org.apache.jetspeed.portal.controllers.WAPPortletController</classname>
+			<media-type ref="wml"/>
+		</portlet-controller-entry>
+	</portlet-controller-registry>
+	<media-type-registry>
+		<media-type-entry name="html">
+			<capability-map ref="html"/>
+			<meta-info>
+				<title>HTML</title>
+			</meta-info>
+		</media-type-entry>
+		<media-type-entry name="wml">
+			<capability-map ref="wml"/>
+			<meta-info>
+				<title>WML</title>
+			</meta-info>
+		</media-type-entry>
+	</media-type-registry>
+	<profile-registry>
+		<profile-entry default="true" name="html-default">
+			<url>/content/profiles/default/html/default.psml</url>
+			<media-type/>
+			<meta-info>
+				<title>Default HTML profile</title>
+			</meta-info>
+		</profile-entry>
+	</profile-registry>
+	<capability-map-registry>
+		<capability-map-entry name="html">
+			<mime-type>text/html</mime-type>
+			<meta-info>
+				<title>HTML</title>
+			</meta-info>
+		</capability-map-entry>
+		<capability-map-entry name="wml">
+			<mime-type>text/vnd.wap.wml</mime-type>
+			<meta-info>
+				<title>WML</title>
+			</meta-info>
+		</capability-map-entry>
+	</capability-map-registry>
+</jetspeed-config>

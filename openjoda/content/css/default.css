@@ -1,0 +1,35 @@
+      
+        {background:  white}
+        BODY  {font-family: "Verdana, Helvetica"; font-size: 9pt; color: 000000}
+        TD  {font-family: "Verdana, Helvetica"; font-size: 8pt; color: 000000}
+        TR  {font-family: "Verdana, Helvetica"; font-size: 9pt; color: 000000}
+        I  {font-family: "Verdana, Helvetica"; font-size: 9pt; color: 000000;font-style: italic}
+        BIG  {font-family: "Verdana, Helvetica"; font-size: 13pt; color: 000000;font-weight: bold}
+        TH  {font-family: "Verdana, Helvetica"; font-size: 9pt; color: 000000;font-weight: bold}
+        A:link {font-family: "Verdana, Helvetica"; font-size: 8pt; color: 000080;font-weight: bold;text-decoration:none}
+        A:visited {font-family: "Verdana, Helvetica"; font-size: 8pt; color: 0000;font-weight: bold; text-decoration:none}
+        H1 {font-family: "Verdana, Helvetica"; font-size: 30pt; color: navy;}
+        STRONG {font-family: "Verdana, Helvetica"; font-size: 9pt; color: 000000;text-decoration: none; margin-left=0}
+        H2 {font-family: "Verdana, Helvetica"; font-size: 12pt; color: 000000;text-decoration: none; margin-left=0}
+        H3 {font-family: "Verdana, Helvetica"; font-size: 9pt; color: 000000;text-decoration: none; margin-left=0}
+        PRE {font-family: "Verdana, Helvetica"; font-size: 9pt; color: 000000}
+        P {font-family: "Verdana, Helvetica"; font-size: 8pt; color: 000000}
+        BLOCKQUOTE {font-family: "Verdana, Arial, Helvetica"; font-size:9pt; color: 000000}
+	.TITLE {font-family: "Verdana, Arial, Helvetica, sans-serif"; font-size: 9pt; font-weight: bold; color:white}
+	.TITLE A:link { color : white; text-decoration:none }
+	.TITLE A:visited { color:white; text-decoration:none }
+	.TITLE A:hover { color: #8394F3; text-decoration:none }
+	.truc { font-family: "Verdana, Arial, Helvetica, sans-serif"; font-size: 1pt; font-weight: bold; color:white}
+        .WELCOMETITLE {font-family: "Verdana, Helvetica"; font-size: 9pt; color: white; background: #666666; font-weight: bold}
+        .WELCOMETITLE:link {font-family: "Verdana, Helvetica"; font-size: 9pt; color: white; background: #666666; font-weight: bold}
+        .WELCOMETITLE:visited {font-family: "Verdana, Helvetica"; font-size: 9pt; color: white; background: #666666; font-weight: bold}
+        .TOOLBAR {font-family: "Verdana, Helvetica"; font-size: 9pt; color: 000000;font-weight: normal}
+        .TOOLBAR:link {font-family: "Verdana, Helvetica"; font-size: 9pt; color: 000000;font-weight: normal}
+        .TOOLBAR:visited {font-family: "Verdana, Helvetica"; font-size: 9pt; color: 000000;font-weight: normal}
+        .TITLEBAR {font-family: "Verdana, Helvetica"; font-size: 9pt; color: FFFFFF; background: navy;font-weight: bold}
+        .MESSAGE {font-family: "Verdana, Helvetica"; font-size: 8pt; color: 000000;font-weight: normal}
+        .MESSAGE:link {font-family: "Verdana, Helvetica"; font-size: 8pt; color: NAVY;font-weight: normal}
+        .MESSAGE:visited {font-family: "Verdana, Helvetica"; font-size: 8pt; color: BLACK;font-weight: normal}
+        .MESSAGENEW {font-family: "Verdana, Helvetica"; font-size: 8pt; color: 000000;font-weight: bold}
+        .MESSAGENEW:link {font-family: "Verdana, Helvetica"; font-size: 8pt; color: NAVY;font-weight: bold}
+        .MESSAGENEW:visited {font-family: "Verdana, Helvetica"; font-size: 8pt; color: BLACK;font-weight: bold}

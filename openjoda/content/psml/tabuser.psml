@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<portlets user="tabuser" xmlns="http://xml.apache.org/jetspeed/2000/psml">
+	<!-- CardPortletController acts like the AWT CardLayout, stacking its contents on top of
+		each other. Only one card visible at a time -->
+	<controller name="org.apache.jetspeed.portal.controllers.CardPortletController">
+		<parameter value="pane" name="parameter"/>
+	</controller>
+	<!-- When used in conjunction with the CardLayout, this paned layout generates "Tabs"
+		on screen. Each tab represents a view of a "card" in the CardPortletController stack-->
+	<control name="com.xo3.jetspeed.portal.controls.PanedPortletControl">
+		<!-- -Position parameter places the "tabs" to the north of the screen ie top.
+			We also set a tab width here-->
+		<parameter value="north" name="position"/>
+		<parameter value="130" name="tab-width"/>
+	</control>
+	<!-- The "skin" values define colors used for these portlets.
+		Experiment with these to see their effects. -->
+	<skin>
+		<property value="Classic Xo3 Green" name="skin-name"/>	
+		<property value="#CCCCCC" name="selected-color"/>
+		<property value="#888888" name="background-color"/>
+		<property value="#0000FF" name="title-color"/>
+		<property value="#DFE2FF" name="pane-background-color"/>
+		<property value="#B6BDD6" name="pane-edge-color"/>
+		<property value="images" name="image-dir"/>
+		<property value="#d3d3d3" name="tab-not-selected-color"/>
+	</skin>
+	<!-- We now define the first "Tab" of this screen. It is effectively a card in the "stack"-->
+	<portlets user="tabuser">
+		<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController">
+			<!-- Relative widths of the colums on screen (note 2 columns)-->
+			<parameter value="50%,50%" name="sizes"/>
+			<!-- we are in "row" mode" as opposed to column, the default-->
+			<parameter value="row" name="mode"/>
+		</controller>
+		<!-- Postion of this tab in the stack. In this case 0 is the first-->
+		<layout size="NORMAL" position="0"/>
+		<!-- Text used to title the actual tab -->
+		<metainfo>
+			<title>Home Page</title>
+		</metainfo>
+		<!-- For the first Tab, define the portlet sources for the left hand column -->
+		<portlets user="tabuser">
+			<!-- Start a new colum -->
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+			<!-- All entries are of type "reference" in site mark up psml -->
+			<entry parent="Jokes" type="ref">
+				<!-- The position of the entry in the associated column, from  top to bottom
+					Change the position value to change the order on screen -->
+				<layout position="0"/>
+			</entry>
+			<entry parent="Computer security" type="ref">
+				<layout position="1"/>
+			</entry>
+			<entry parent="Developer" type="ref">
+				<layout position="2"/>
+			</entry>
+		</portlets>
+		<!-- For the first Tab, define the portlet sources for the right hand column -->
+		<portlets user="tabuser">
+			<!-- start the second column -->
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+			<entry parent="NewsFeedPortlet" type="ref">
+				<layout position="0"/>
+			</entry>
+			<entry parent="Jetspeed" type="ref">
+				<layout position="1"/>
+			</entry>
+			<entry parent="Search" type="ref">
+				<layout position="2"/>
+			</entry>
+		</portlets>
+	</portlets>
+	<!-- We now define the second "Tab" of this screen.  Note that the comments above apply to 
+		all remaining tabs -->
+	<portlets user="tabuser">
+		<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController">
+			<parameter value="50%,50%" name="sizes"/>
+			<parameter value="row" name="mode"/>
+		</controller>
+		<!-- Postion of this tab in the stack. -->
+		<layout size="NORMAL" position="1"/>
+		<metainfo>
+			<title>EJB Page</title>
+		</metainfo>
+		<portlets user="tabuser">
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+			<entry parent="Java" type="ref">
+				<layout position="0"/>
+			</entry>
+			<entry parent="Internet global" type="ref">
+				<layout position="1"/>
+			</entry>
+		</portlets>
+		<portlets user="tabuser">
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+			<entry parent="Search" type="ref">
+				<layout position="0"/>
+			</entry>
+			<entry parent="BillionairesPortlet" type="ref">
+				<layout position="1"/>
+			</entry>
+		</portlets>
+	</portlets>
+	<!-- We now define the third "Tab" of this screen. -->
+	<portlets user="tabuser">
+		<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController">
+			<parameter value="50%,50%" name="sizes"/>
+			<parameter value="row" name="mode"/>
+		</controller>
+		<layout size="NORMAL" position="2"/>
+		<metainfo>
+			<title>Finance Page</title>
+		</metainfo>
+		<portlets user="tabuser">
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+			<entry parent="Marketing" type="ref">
+				<layout position="0"/>
+			</entry>
+			<entry parent="AT&amp;T" type="ref">
+				<layout position="1"/>
+			</entry>
+		</portlets>
+		<portlets user="tabuser">
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+			<entry parent="Search" type="ref">
+				<layout position="0"/>
+			</entry>
+			<entry parent="OandaCurrency" type="ref">
+				<layout position="1"/>
+			</entry>
+			<entry parent="YahooDayChart" type="ref">
+				<layout position="2"/>
+			</entry>
+		</portlets>
+	</portlets>
+	<!-- Likewise the fourth tab -->
+	<portlets user="tabuser">
+		<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController">
+			<parameter value="50%,50%" name="sizes"/>
+			<parameter value="row" name="mode"/>
+		</controller>
+		<layout size="NORMAL" position="3"/>
+		<metainfo>
+			<title>Industry</title>
+		</metainfo>
+		<portlets user="tabuser">
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+			<entry parent="Hospitality" type="ref">
+				<layout position="0"/>
+			</entry>
+			<entry parent="Consumer non-durables " type="ref">
+				<layout position="1"/>
+			</entry>
+		</portlets>
+		<portlets user="tabuser">
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+			<entry parent="Search" type="ref">
+				<layout position="0"/>
+			</entry>
+		</portlets>
+	</portlets>
+	<!-- Likewise the fifth tab -->
+	<portlets user="tabuser">
+		<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController">
+			<parameter value="50%,50%" name="sizes"/>
+			<parameter value="row" name="mode"/>
+		</controller>
+		<layout size="NORMAL" position="4"/>
+		<metainfo>
+			<title>Top News</title>
+		</metainfo>
+		<portlets user="tabuser">
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+			<entry parent="Internet global" type="ref">
+				<layout position="0"/>
+			</entry>
+		</portlets>
+		<portlets user="tabuser">
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+			<entry parent="Search" type="ref">
+				<layout position="0"/>
+			</entry>
+		</portlets>
+	</portlets>
+	<!-- Likewise the sixth tab -->
+	<portlets user="tabuser">
+		<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController">
+			<parameter value="50%,50%" name="sizes"/>
+			<parameter value="row" name="mode"/>
+		</controller>
+		<layout size="NORMAL" position="5"/>
+		<metainfo>
+			<title>Regional</title>
+		</metainfo>
+		<portlets user="tabuser">
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+			<entry parent="Europe" type="ref">
+				<layout position="0"/>
+			</entry>
+			<entry parent="UK" type="ref">
+				<layout position="1"/>
+			</entry>
+		</portlets>
+		<portlets user="tabuser">
+			<controller name="org.apache.jetspeed.portal.controllers.RowColumnPortletController"/>
+			<entry parent="Search" type="ref">
+				<layout position="0"/>
+			</entry>
+		</portlets>
+	</portlets>
+</portlets>

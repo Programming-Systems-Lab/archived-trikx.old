@@ -1,0 +1,13 @@
+
+defaultPortlets.xml ->  Determines what portlets the user is subscribed to when 
+                        they haven't authenticated or have just signed up for an 
+                        account.
+
+
+recommendedPortlets.xml ->  When the user is prompted to choose some portlets
+                            these are recommended first.
+
+allPortlets.xml -> Determines the portlets that the user may subscribe to.
+
+portletMarkup.xsd -> The XML Schema that describes Portlet Markup Language
+
